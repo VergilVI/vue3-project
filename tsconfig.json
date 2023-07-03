@@ -10,16 +10,28 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
     "skipLibCheck": true,
+    //解析非相对模块的基础地址，默认是当前目录
     "baseUrl": "./",
+    //路径映射，相对于baseUrl
     "paths": {
       "@/*": ["src/*"],
       "components": ["src/components/*"],
       "_pinia/*": ["src/pinia/*"]
     }
   },
-  "include": ["mock/**/*", "src/**/*", "config/**/*", ".umirc.ts", "typings.d.ts"],
+  "include": [
+    "mock/**/*",
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    "config/**/*",
+    ".umirc.ts",
+    "typings.d.ts",
+  ],
   "exclude": [
     "node_modules",
     "lib",

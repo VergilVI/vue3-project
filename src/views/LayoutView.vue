@@ -1,10 +1,14 @@
 <template>
   <header id="header-box">
-    <div>
-      <button class="btn" @click="routerJump" data-path="/home">路由跳转首页</button>
-      <button class="btn" @click="routerJump" data-path="/mypage">路由跳转自定义页面</button>
-      <img alt="Vue logo" class="logo" src="@/assets/image/logo.svg" width="125" height="125" />
+    <div class="top-box">
+      <el-button class="btn" type="primary" @click="routerJump" data-path="/home">
+        路由跳转首页
+      </el-button>
+      <el-button class="btn" type="success" @click="routerJump" data-path="/mypage">
+        路由跳转自定义页面
+      </el-button>
     </div>
+    <img alt="Vue logo" class="logo" src="@/assets/image/logo.svg" width="125" height="125" />
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
@@ -38,6 +42,7 @@
 <script setup lang="ts">
 // import { computed } from 'vue'
 import { useRouter, useRoute, RouterLink, RouterView } from 'vue-router'
+import { ElButton } from 'element-plus'
 import HelloWorld from '../components/HelloWorld.vue'
 
 /** 获取路由状态对象 */
@@ -63,8 +68,8 @@ header {
   margin: 0 auto;
   width: 100%;
 
-  .btn {
-    padding: 10px 0;
+  .top-box{
+    text-align: center;
   }
 
   .logo {
@@ -75,14 +80,14 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  // font-size: 12px;
   text-align: center;
   margin-top: 2rem;
 
   a {
     display: inline-block;
     padding: 0 1rem;
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid rgba(60, 60, 60, 0.12);
 
     &:first-of-type {
       border: 0;

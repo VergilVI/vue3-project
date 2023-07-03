@@ -29,6 +29,14 @@ export default defineConfig({
     },
     extensions: ['.mjs', '.js', '.ts', 'jsx', 'tsx', '.json', '.vue']
   },
+  css: {
+    preprocessorOptions: {
+      // 导入scss全局样式
+      scss: {
+        additionalData: `@use "./src/assets/style/main.scss" as *;`
+      },
+    },
+  },
   server: {
     open: false,
     host: '0.0.0.0',

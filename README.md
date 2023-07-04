@@ -46,6 +46,8 @@ npm run lint
 NODE_ENV                    环境类型
 VUE_APP_API_URL             请求API地址
 VUE_APP_TAES                代理地址
+VUE_APP_UTLPATH             打包目录
+VUE_APP_TITLE               页面标题
 ```
 
 ### 插件说明

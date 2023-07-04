@@ -1,3 +1,4 @@
+// postcss-px2rem的配置项，需要时可以打开
 module.exports = {
   // plugins: {
   //   'postcss-px2rem': {

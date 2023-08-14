@@ -56,6 +56,10 @@ const router = createRouter({
         name: 'swiperCoverflow',
         meta: { title: '轮播图-3D旋转' },
         component: () => import('../views/SwiperCoverflow.vue')
+      },{
+        path:'/demo',
+        name:'myTableDemo',
+        component:()=>import('../views/MyTableDemo.vue')
       }]
     }, {
       path: '/404',

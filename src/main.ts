@@ -7,6 +7,8 @@ import VueLazyLoad from 'vue3-lazyload'
 import App from './App.vue'
 import router from './router'
 
+import ElTableInfiniteScroll from 'el-table-infinite-scroll'
+
 const app = createApp(App)
 
 app.use(createPinia())
@@ -15,5 +17,6 @@ import loadingGIF from '@/assets/image/icon-loading.gif'
 app.use(VueLazyLoad, {
     loading: loadingGIF
 })
+app.use(ElTableInfiniteScroll)
 
 app.mount('#app')

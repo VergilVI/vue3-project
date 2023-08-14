@@ -13,6 +13,7 @@
       <HelloWorld msg="You did it!" />
 
       <nav>
+        <RouterLink to="/demo">TableDemo</RouterLink>
         <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/myPage">MyPage</RouterLink>
@@ -68,7 +69,7 @@ header {
   margin: 0 auto;
   width: 100%;
 
-  .top-box{
+  .top-box {
     text-align: center;
   }
 

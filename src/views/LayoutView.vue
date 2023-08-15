@@ -8,9 +8,9 @@
         路由跳转自定义页面
       </el-button>
     </div>
-    <img alt="Vue logo" class="logo" src="@/assets/image/logo.svg" width="125" height="125" />
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/image/logo.svg" width="125" height="125" /> -->
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <!-- <HelloWorld msg="You did it!" /> -->
 
       <nav>
         <RouterLink to="/demo">TableDemo</RouterLink>

@@ -206,7 +206,6 @@ import { ref, onBeforeMount } from 'vue'
 import { ElButton, ElTable, ElTableColumn } from 'element-plus'
 import type { CellCls } from 'element-plus'
 import { debounce } from 'lodash'
-import { changeGlobalNodesTarget } from 'element-plus/es/utils'
 
 //#region 生命周期
 onBeforeMount(() => {

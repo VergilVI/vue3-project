@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    ElementPlus(),// 按需导入相关elementUI组件样式
+    ElementPlus({}) // 按需导入相关elementUI组件样式
     // AutoImport({
     //   resolvers: [ElementPlusResolver()]// elementUI自动导入插件
     // }),
@@ -40,7 +40,7 @@ export default defineConfig({
   server: {
     open: false,
     host: '0.0.0.0',
-    port: 8080,
+    // port: 8080,
     fs: {
       strict: false, // 支持引用除入口目录的文件
     },

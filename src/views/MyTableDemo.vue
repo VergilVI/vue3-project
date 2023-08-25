@@ -362,8 +362,14 @@ function onTableCurrentChange(currentRow: any, oldCurrentRow: any) {
 .root {
   width: 100%;
   height: 100%;
-  background: rgb(246, 246, 246);
+  // background: rgb(246, 246, 246);
   vertical-align: middle;
+
+  h3{
+    text-align: center;
+    margin: 20px 0 0;
+    padding: 0;
+  }
 
   .table-1 {
     border: 1px solid green;

@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import { ElCarousel, ElCarouselItem } from 'element-plus'
 </script>
 
 <style scoped lang="scss">

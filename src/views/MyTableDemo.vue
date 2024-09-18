@@ -203,9 +203,8 @@
 
 <script setup lang="ts" name="myTableDemo">
 import { ref, onBeforeMount } from 'vue'
-import { ElButton, ElTable, ElTableColumn } from 'element-plus'
 import type { CellCls } from 'element-plus'
-import { debounce } from 'lodash'
+// import { debounce } from 'lodash'
 
 //#region 生命周期
 onBeforeMount(() => {

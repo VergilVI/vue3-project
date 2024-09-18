@@ -46,7 +46,6 @@
 
 <script setup lang="ts" name="swiperBehide">
 import { ref, reactive, computed } from 'vue'
-import { ElSwitch } from 'element-plus'
 import { Autoplay, Keyboard, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Swiper as SwiperType, AutoplayOptions } from 'swiper/types'

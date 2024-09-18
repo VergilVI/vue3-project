@@ -115,7 +115,7 @@ onUnmounted(() => {
 
 function increment() {
   StateRef.value++
-  if (Count.value) Count.value += 2
+  if (typeof Count.value == 'number') Count.value += 2
   Count.name = '这是新的信息s'
 }
 

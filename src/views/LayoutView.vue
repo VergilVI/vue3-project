@@ -1,7 +1,13 @@
 <template>
   <header id="header-box">
     <div class="top-box">
-      <el-button class="btn" type="primary" @click="routerJump" data-path="/home">
+      <el-button
+        class="btn"
+        type="primary"
+        @click="routerJump"
+        data-path="/home"
+        :loading="butLoading"
+      >
         路由跳转首页
       </el-button>
       <el-button class="btn" type="success" @click="routerJump" data-path="/mypage">
@@ -30,21 +36,22 @@
 
   <RouterView v-slot="{ Component }">
     <transition>
-      <div class="router-box">
+      <!-- <div class="router-box"> -->
         <keep-alive>
           <component :is="Component" :key="route.meta.path" />
         </keep-alive>
-      </div>
+      <!-- </div> -->
     </transition>
   </RouterView>
   <!-- <RouterView /> -->
 </template>
 
 <script setup lang="ts">
-// import { computed } from 'vue'
+import { ref } from 'vue'
 import { useRouter, useRoute, RouterLink, RouterView } from 'vue-router'
-import { ElButton } from 'element-plus'
-import HelloWorld from '../components/HelloWorld.vue'
+// import HelloWorld from '../components/HelloWorld.vue'
+
+const butLoading = ref<boolean>(false)
 
 /** 获取路由状态对象 */
 const route = useRoute()
@@ -55,6 +62,10 @@ const router = useRouter()
 function routerJump(e: any) {
   const { path } = e.currentTarget.dataset
   const query = path === '/mypage' ? { custom: '路由携带值' } : undefined
+  butLoading.value = true
+  setTimeout(() => {
+    butLoading.value = false
+  }, 1500)
   router.push({
     path,
     query

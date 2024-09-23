@@ -1,4 +1,4 @@
-// import './assets/style/main.css'
+import './assets/style/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -11,6 +11,7 @@ import loadingGIF from '@/assets/image/icon-loading.gif'
 import ElTableInfiniteScroll from 'el-table-infinite-scroll'
 
 import './assets/font/fontFace.css'
+import './assets/style/contextMenu.scss'
 
 const app = createApp(App)
 

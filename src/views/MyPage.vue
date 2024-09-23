@@ -1,18 +1,18 @@
 <template>
   <div class="root">
-    <button class="btn" @click="() => (ejectPageShow = !ejectPageShow)">点击弹出页面</button>
+    <el-button type="warning" round size="large" @click="() => (ejectPageShow = !ejectPageShow)">点击弹出页面</el-button>
     <div class="label">路由携带传参：{{ route.query }}</div>
     <div class="label">StateRef: {{ StateRef }}</div>
     <div class="label">Count: {{ Count }}</div>
     <div class="label">ValueToRef: {{ ValueToRef }}</div>
     <div class="switch-box">
-      <button class="btn" @click="increment">点击+1</button>
-      <button class="btn" @click="stopEffect">点击停止Hook监听</button>
+      <el-button type="primary" size="large" @click="increment">点击+1</el-button>
+      <el-button type="danger" size="large" @click="stopEffect">点击停止Hook监听</el-button>
     </div>
     <div class="split-line" />
     <div class="switch-box">
-      <button class="btn" @click="() => (comName = 'componentA')">点击组件-A</button>
-      <button class="btn" @click="() => (comName = 'componentB')">点击组件-B</button>
+      <el-button type="success" plain size="large" @click="() => (comName = 'componentA')">点击组件-A</el-button>
+      <el-button type="success" plain size="large" @click="() => (comName = 'componentB')">点击组件-B</el-button>
     </div>
     <!-- <div class="split-line" /> -->
     <!-- <componentA :value="Count.name" @change-value="changeValueFunc" /> -->
@@ -31,19 +31,7 @@
 
 <script setup lang="ts" name="MyPage">
 /** 调用vue3的Hooks */
-import {
-  reactive,
-  ref,
-  toRef,
-  watch,
-  watchEffect,
-  onBeforeMount,
-  onMounted,
-  onBeforeUpdate,
-  onUpdated,
-  onBeforeUnmount,
-  onUnmounted
-} from 'vue'
+import { reactive, ref, toRef, watch, watchEffect, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 import componentA from '@/components/ComponentA.vue'
@@ -134,11 +122,6 @@ function changeValueFunc(param: string) {
     font-weight: bolder;
   }
 
-  .btn {
-    display: block;
-    padding: 10px 20px;
-  }
-
   .split-line {
     background-color: gray;
     height: 2px;
@@ -190,6 +173,7 @@ function changeValueFunc(param: string) {
   .eject-leave-to {
     transform: scale(0);
   }
+
   // #endregion
 }
 </style>

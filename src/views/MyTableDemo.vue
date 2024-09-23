@@ -19,7 +19,7 @@
       :cell-class-name="customCellClassName"
       @cell-mouse-enter="onTableEnter"
       @cell-mouse-leave="onTableLeave"
-      @cell-contextmenu="(row, column) => onTableContextMenu(row, column, 'table1')"
+      @cell-contextmenu="(row: any, column: any) => onTableContextMenu(row, column, 'table1')"
       @current-change="onTableCurrentChange"
     >
       <el-table-column type="selection" width="55" />
@@ -28,30 +28,11 @@
           <div>{{ scop.$index + 1 }}</div>
         </template>
       </el-table-column>
-      <el-table-column
-        sortable
-        prop="date"
-        align="center"
-        header-align="center"
-        label="日期"
-        width="120"
-      />
+      <el-table-column sortable prop="date" align="center" header-align="center" label="日期" width="120" />
       <el-table-column prop="name" align="center" header-align="center" label="姓名" />
       <el-table-column prop="state" align="center" header-align="center" label="状态" />
-      <el-table-column
-        prop="city"
-        align="center"
-        header-align="center"
-        label="城市"
-        show-overflow-tooltip
-      />
-      <el-table-column
-        prop="address"
-        align="center"
-        header-align="center"
-        label="住址"
-        show-overflow-tooltip
-      />
+      <el-table-column prop="city" align="center" header-align="center" label="城市" show-overflow-tooltip />
+      <el-table-column prop="address" align="center" header-align="center" label="住址" show-overflow-tooltip />
       <el-table-column prop="zip" align="center" header-align="center" label="编号" />
       <el-table-column fixed="right" align="center" header-align="center" label="操作" width="80">
         <div style="text-align: center">
@@ -83,45 +64,11 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column
-          fixed
-          sortable
-          prop="date"
-          align="center"
-          header-align="center"
-          label="日期"
-          width="120"
-        />
-        <el-table-column
-          prop="name"
-          align="center"
-          header-align="center"
-          label="姓名"
-          width="120"
-        />
-        <el-table-column
-          prop="state"
-          align="center"
-          header-align="center"
-          label="状态"
-          width="120"
-        />
-        <el-table-column
-          prop="city"
-          align="center"
-          header-align="center"
-          label="城市"
-          show-overflow-tooltip
-          width="200"
-        />
-        <el-table-column
-          prop="address"
-          align="center"
-          header-align="center"
-          label="住址"
-          show-overflow-tooltip
-          width="150"
-        />
+        <el-table-column fixed sortable prop="date" align="center" header-align="center" label="日期" width="120" />
+        <el-table-column prop="name" align="center" header-align="center" label="姓名" width="120" />
+        <el-table-column prop="state" align="center" header-align="center" label="状态" width="120" />
+        <el-table-column prop="city" align="center" header-align="center" label="城市" show-overflow-tooltip width="200" />
+        <el-table-column prop="address" align="center" header-align="center" label="住址" show-overflow-tooltip width="150" />
         <el-table-column prop="zip" align="center" header-align="center" label="编号" width="120" />
         <el-table-column fixed="right" align="center" header-align="center" label="操作">
           <div style="text-align: center">
@@ -151,45 +98,11 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column
-          fixed
-          sortable
-          prop="date"
-          align="center"
-          header-align="center"
-          label="日期"
-          width="120"
-        />
-        <el-table-column
-          prop="name"
-          align="center"
-          header-align="center"
-          label="姓名"
-          width="120"
-        />
-        <el-table-column
-          prop="state"
-          align="center"
-          header-align="center"
-          label="状态"
-          width="120"
-        />
-        <el-table-column
-          prop="city"
-          align="center"
-          header-align="center"
-          label="城市"
-          show-overflow-tooltip
-          width="200"
-        />
-        <el-table-column
-          prop="address"
-          align="center"
-          header-align="center"
-          label="住址"
-          show-overflow-tooltip
-          width="150"
-        />
+        <el-table-column fixed sortable prop="date" align="center" header-align="center" label="日期" width="120" />
+        <el-table-column prop="name" align="center" header-align="center" label="姓名" width="120" />
+        <el-table-column prop="state" align="center" header-align="center" label="状态" width="120" />
+        <el-table-column prop="city" align="center" header-align="center" label="城市" show-overflow-tooltip width="200" />
+        <el-table-column prop="address" align="center" header-align="center" label="住址" show-overflow-tooltip width="150" />
         <el-table-column prop="zip" align="center" header-align="center" label="编号" width="120" />
         <el-table-column fixed="right" align="center" header-align="center" label="操作">
           <div style="text-align: center">
@@ -201,9 +114,9 @@
   </div>
 </template>
 
-<script setup lang="ts" name="myTableDemo">
+<script setup lang="ts" name="MyTableDemo">
 import { ref, onBeforeMount } from 'vue'
-import type { CellCls } from 'element-plus'
+import type { CellCls, ElTable } from 'element-plus'
 // import { debounce } from 'lodash'
 
 //#region 生命周期
@@ -246,7 +159,7 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
+    zip: 'CA 90036',
   },
   {
     date: '2016-05-02',
@@ -254,7 +167,7 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
+    zip: 'CA 90036',
   },
   {
     date: '2016-05-04',
@@ -262,7 +175,7 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
+    zip: 'CA 90036',
   },
   {
     date: '2016-05-01',
@@ -270,7 +183,7 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
+    zip: 'CA 90036',
   },
   {
     date: '2016-05-08',
@@ -278,7 +191,7 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
+    zip: 'CA 90036',
   },
   {
     date: '2016-05-06',
@@ -286,7 +199,7 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
+    zip: 'CA 90036',
   },
   {
     date: '2016-05-07',
@@ -294,14 +207,14 @@ const baseData = ref<tableDataType[]>([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036'
-  }
+    zip: 'CA 90036',
+  },
 ])
 /** 表格数据对象数组(展示视图用) */
 const tablesData = ref<Record<tableDefineType, tableDataType[]>>({
   table1: [],
   table2: [],
-  table3: []
+  table3: [],
 })
 
 /** 多表格加载数据方法
@@ -360,11 +273,11 @@ function onTableCurrentChange(currentRow: any, oldCurrentRow: any) {
 <style scoped lang="scss">
 .root {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   // background: rgb(246, 246, 246);
   vertical-align: middle;
 
-  h3{
+  h3 {
     text-align: center;
     margin: 20px 0 0;
     padding: 0;

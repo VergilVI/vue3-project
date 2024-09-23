@@ -1,7 +1,7 @@
 <template>
   <div class="root">
     <div class="label">子组件接受内容： {{ props.value }}</div>
-    <button class="btn" @click="trigger">点击触发父级组件传递的函数</button>
+    <el-button type="info" plain size="large" @click="trigger">点击触发父级组件传递的函数</el-button>
     <div>组件内输入的内容：{{ inputValue }}</div>
     <input type="text" v-model="inputValue" />
   </div>
@@ -30,10 +30,6 @@ function trigger() {
   .label {
     color: green;
     font-weight: bolder;
-  }
-  .btn {
-    display: block;
-    padding: 10px 20px;
   }
 }
 </style>

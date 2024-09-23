@@ -31,7 +31,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="swiperCoverflow">
+<script setup lang="ts" name="SwiperCoverflow">
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
 // import required modules

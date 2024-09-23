@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="swiperBehide">
+<script setup lang="ts" name="SwiperBehide">
 import { ref, reactive, computed } from 'vue'
 import { Autoplay, Keyboard, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'

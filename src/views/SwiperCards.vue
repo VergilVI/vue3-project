@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="swiper">
+<script setup lang="ts" name="SwiperCards">
 import { onMounted } from 'vue'
 import { EffectCards } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'

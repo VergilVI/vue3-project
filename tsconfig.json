@@ -42,6 +42,7 @@
     "config/**/*",
     ".umirc.ts",
     "typings.d.ts",
+    "auto-imports.d.ts",
   ],
   "exclude": [
     "node_modules",

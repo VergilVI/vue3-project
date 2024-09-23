@@ -13,9 +13,7 @@ const router = createRouter({
       children: [{
         path: '/home',
         name: 'home',
-        meta: {
-          title: '首页'
-        },
+        meta: { title: '首页', keepAlive: true },
         component: HomeView,
       },
       {

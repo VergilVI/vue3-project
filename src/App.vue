@@ -1,25 +1,23 @@
 <template>
-  <el-config-provider :locale="zhCn">
-    <RouterView v-slot="{ Component }">
-      <transition>
-        <!-- <div class="router-box"> -->
-          <keep-alive>
-            <component :is="Component" :key="route.meta.path" />
-          </keep-alive>
-        <!-- </div> -->
-      </transition>
-    </RouterView>
-  </el-config-provider>
-  <!-- <RouterView /> -->
+  <div class="app-box">
+    <el-config-provider :locale="zhCn">
+      <RouterView />
+    </el-config-provider>
+  </div>
 </template>
 
 <script setup lang="ts">
 // import { computed } from 'vue'
-import { useRoute, RouterView } from 'vue-router'
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import { RouterView } from 'vue-router'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
-/** 获取路由状态对象 */
-const route = useRoute()
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.app-box {
+  box-sizing: border-box;
+  padding: 8px;
+  height: 100vh;
+  overflow: auto;
+}
+</style>

@@ -1,13 +1,7 @@
 <template>
   <header id="header-box">
     <div class="top-box">
-      <el-button
-        class="btn"
-        type="primary"
-        @click="routerJump"
-        data-path="/home"
-        :loading="butLoading"
-      >
+      <el-button class="btn" type="primary" @click="routerJump" data-path="/home" :loading="butLoading">
         路由跳转首页
       </el-button>
       <el-button class="btn" type="success" @click="routerJump" data-path="/mypage">
@@ -34,19 +28,15 @@
     </div>
   </header>
 
-  <RouterView v-slot="{ Component }">
-    <transition>
-      <!-- <div class="router-box"> -->
-        <keep-alive>
-          <component :is="Component" :key="route.meta.path" />
-        </keep-alive>
-      <!-- </div> -->
-    </transition>
+  <RouterView v-slot="{ Component, route }">
+    <keep-alive :max="10">
+      <component v-if="route.meta.keepAlive" :is="Component" :key="route.path" />
+    </keep-alive>
+    <component v-if="!route.meta.keepAlive" :is="Component" :key=route.path />
   </RouterView>
-  <!-- <RouterView /> -->
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="Layout">
 import { ref } from 'vue'
 import { useRouter, useRoute, RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from '../components/HelloWorld.vue'

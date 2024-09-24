@@ -5,30 +5,17 @@
       <el-button type="primary" :icon="Search" @click="apiGetTempData">搜索</el-button>
       <el-button type="info" :icon="Edit">编辑</el-button>
       <el-button type="danger" :icon="Delete">删除</el-button>
-      <el-icon>
-        <VideoCameraFilled />
-      </el-icon>
-      <el-icon>
-        <Connection />
-      </el-icon>
-      <el-icon class="is-loading">
-        <Loading />
-      </el-icon>
-      <el-icon class="is-loading reverse">
-        <Refresh />
-      </el-icon>
-      <el-icon class="is-loading">
-        <RefreshRight />
-      </el-icon>
-      <el-icon class="is-loading reverse">
-        <RefreshLeft />
-      </el-icon>
+      <el-icon><VideoCameraFilled /></el-icon>
+      <el-icon><Connection /></el-icon>
+      <el-icon class="is-loading"><Loading /></el-icon>
+      <el-icon class="is-loading reverse"><Refresh /></el-icon>
+      <el-icon class="is-loading"><RefreshRight /></el-icon>
+      <el-icon class="is-loading reverse"><RefreshLeft /></el-icon>
       <i class="el-icon" style="background: #6380df; border-radius: 50%"></i>
     </div>
     <div class="chart_box" ref="refTempGraph" v-loading="tempGraph.loading"></div>
 
-    <el-dialog v-model="editNode.visible" :title="editNode.isEdit ? '编辑节点' : '创建节点'" destroyOnClose
-      @closed="onModal_afterClose">
+    <el-dialog v-model="editNode.visible" :title="editNode.isEdit ? '编辑节点' : '创建节点'" destroyOnClose @closed="onModal_afterClose">
       <el-form ref="refEditNodeForm" :model="editNode.form" :rules="editNode.rules" label-width="70px" label-suffix=":">
         <el-form-item label="名称" prop="name">
           <el-input v-model="editNode.form.name" placeholder="请输入名字" clearable />
@@ -589,4 +576,5 @@ apiGetTempData()
 //       width: 10px;
 //     }
 //   }
-// }</style>
+// }
+</style>

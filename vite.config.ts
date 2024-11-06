@@ -12,6 +12,13 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 export default defineConfig({
   // base: './', // 打包为相对路径
   clearScreen: false, // vite打印执行结果时，是否清屏控制台
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
   plugins: [
     vue(),
     vueJsx(),

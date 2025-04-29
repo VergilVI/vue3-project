@@ -48,10 +48,8 @@ import { deepCopyFunc } from '@/assets/js/utils'
 //#endregion
 
 //#region 声明与引用的Interface & Type
-import type { GraphicComponentOption } from 'echarts/components'
-import type { ComposeOption } from 'echarts/core'
 import type { FormRules } from 'element-plus'
-
+type EChartsOption = echarts.EChartsOption
 /** echart图表数据类型 */
 interface TechartData {
   id: number | string
@@ -67,6 +65,7 @@ interface TechartData {
 //#region 声明变量
 const refTempGraph = shallowRef<HTMLElement>()
 const chartObj_tempGraph = shallowRef<echarts.ECharts>()
+const resizeObserverObj = shallowRef<ResizeObserver>()
 const tempGraph = reactive({
   loading: false,
   dataList: [] as TechartData[],
@@ -403,12 +402,16 @@ function updateEchartTemp(paramArr?: TechartData[], forceUpdate = true) {
   if (!chartObj_tempGraph.value) {
     chartObj_tempGraph.value = echarts.init(echartEle)
     // 监听chart容器大小变化
-    new ResizeObserver(throttle(() => chartObj_tempGraph.value?.resize(), 400, { leading: true })).observe(echartEle)
+    chartObj_tempGraph.value.on('finished', () => {
+      resizeObserverObj.value = new ResizeObserver(throttle(() => chartObj_tempGraph.value?.resize(), 300))
+      resizeObserverObj.value.observe(echartEle)
+      chartObj_tempGraph.value?.off('finished')
+    })
   }
 
   const echartData = paramArr && paramArr?.length > 0 ? [...paramArr] : flattenNestedArray(deepCopyFunc(tempGraph.dataList))
   if (echartData[0]) echartData[0] = { ...echartData[0], symbolSize: 100, draggable: false, fixed: echartData.length > 1, x: 500, y: 0 }
-  const options: ComposeOption<GraphicComponentOption> = {
+  const options: EChartsOption = {
     tooltip: {
       extraCssText: 'z-index: 3;',
       formatter: (param: any) => {

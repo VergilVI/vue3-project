@@ -19,7 +19,7 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@imengyu/vue3-context-menu": "^1.4.3",
     "axios": "^1.7.7",
-    "echarts": "^5.5.1",
+    "echarts": "^5.6.0",
     "el-table-infinite-scroll": "^3.0.6",
     "element-plus": "^2.8.7",
     "lodash-es": "^4.17.21",
@@ -28,7 +28,8 @@
     "swiper": "^9.4.1",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
-    "vue3-lazyload": "^0.3.8"
+    "vue3-lazyload": "^0.3.8",
+    "vue3-seamless-scroll": "^3.0.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

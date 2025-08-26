@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     ComponentA: typeof import('./src/components/ComponentA.vue')['default']
     ComponentB: typeof import('./src/components/ComponentB.vue')['default']
+    EchartTest: typeof import('./src/components/EchartTest.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
@@ -27,8 +28,10 @@ declare module 'vue' {
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    OngingTask: typeof import('./src/components/OngingTask.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SeamlessScroll: typeof import('./src/components/SeamlessScroll.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }

@@ -1,13 +1,22 @@
+<script setup lang="ts" name="Home">
+import OngingTask from '@/components/OngingTask.vue'
+import EchartTest from '@/components/EchartTest.vue'
+import SeamlessScroll from '@/components/SeamlessScroll.vue'
+// import TheWelcome from '../components/TheWelcome.vue'
+
+</script>
+
 <template>
   <main>
     <div class="describe">尚未设计的首页~</div>
     <!-- <TheWelcome /> -->
+    <div class="echart_group">
+      <OngingTask class="echart_box" />
+      <EchartTest class="echart_box" />
+      <SeamlessScroll />
+    </div>
   </main>
 </template>
-
-<script setup lang="ts" name="Home">
-// import TheWelcome from '../components/TheWelcome.vue'
-</script>
 
 <style scoped lang="scss">
 .describe {
@@ -20,5 +29,16 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.echart_group {
+  display: flex;
+  column-gap: 8px;
+
+  .echart_box {
+    height: 300px;
+    width: 30vw;
+    background: #333;
+  }
 }
 </style>
